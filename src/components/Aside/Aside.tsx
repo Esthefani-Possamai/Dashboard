@@ -26,10 +26,11 @@ export const Aside = () => {
                     Entradas
                 </C.MenuItemLink>
                 <C.MenuItemLink href="#">
-                    <MdArrowUpward />
+                    <MdArrowDownward />
                     Saídas
                 </C.MenuItemLink>
                 <C.MenuItemLink href="#">
+                    <MdExitToApp />
                     Sair
                 </C.MenuItemLink>
             </C.MenuContainer>
