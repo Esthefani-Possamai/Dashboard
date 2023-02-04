@@ -3,20 +3,19 @@ import * as C from './styles'
 import { Content } from "../Content/Content";
 import { MainHeader } from "../MainHeader/MainHeader";
 import { Aside } from "../Aside/Aside";
-import { ContentHeader } from "../ContentHeader/ContentHeader";
 
-type Props = {
-    children: React.ReactNode
+interface Props {
+    children?: React.ReactNode;
 }
 
-export const Layout: React.FC <Props> = ({children}: Props) => {
+export const Layout: React.FC<Props> = ({children}) => {
     return (
         <C.Container>
             <MainHeader />
             <Aside />
-            <ContentHeader>
-                {children}    
-            </ContentHeader>
+            <Content>
+                {children}
+            </Content>
         </C.Container>
     )
 }

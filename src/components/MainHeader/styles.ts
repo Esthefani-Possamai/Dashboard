@@ -21,5 +21,5 @@ export const Welcome = styled.h3 `
 `;
 
 export const UserName = styled.span `
-
+    
 `;

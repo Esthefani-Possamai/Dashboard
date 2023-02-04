@@ -1,10 +1,14 @@
 import React from "react";
 import * as C from './styles'
 
-export const Content = () => {
+interface Props {
+    children?: React.ReactNode;
+}
+
+export const Content: React.FC<Props> = ({ children }) => {
     return (
         <C.Container>
-        Testando a Content
+            {children}
         </C.Container>
     )
 }
