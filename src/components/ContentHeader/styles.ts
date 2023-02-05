@@ -23,4 +23,7 @@ export const Title = styled.div <IProps> `
 `;
 
 export const Controllers = styled.div `
+    display: flex;
+    flex-direction: row;
+    gap: 15px
 `;

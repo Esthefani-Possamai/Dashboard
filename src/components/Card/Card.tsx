@@ -2,16 +2,15 @@ import React from "react";
 import * as C from './styles'
 
 interface ICard {
-    cardColor: string;
     tagColor: string;
     title: string;
     subtitle: string;
     amount: string
 }
 
-export const Card: React.FC<ICard> = ({cardColor, tagColor, title, subtitle, amount}) => {
+export const Card: React.FC<ICard> = ({tagColor, title, subtitle, amount}) => {
     return (
-        <C.Container color={cardColor}>
+        <C.Container>
             <C.Tag color={tagColor} />
             <div>
                 <span>{title}</span>
