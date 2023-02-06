@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div `
 `;
 
-export const Content = styled.div `
+export const Content = styled.main `
 `;
 
 export const Filters = styled.div `
@@ -21,9 +21,10 @@ export const Filters = styled.div `
         margin: 0px;
         padding: 0px;
         transition: opacity 0.2s;
+        opacity: 0.5;
 
         :hover {
-            opacity: 0.8;
+            opacity: 1;
         }
     }
 
@@ -51,5 +52,9 @@ export const Filters = styled.div `
         :hover {
         opacity: 0.8;
         }
+    }
+
+    .tag-actived {
+        opacity: 1;
     }
 `;
