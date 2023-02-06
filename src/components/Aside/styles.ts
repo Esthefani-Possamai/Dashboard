@@ -7,6 +7,23 @@ export const Container = styled.div `
     color: ${props => props.theme.colors.white};
     padding-left: 30px;
     border-right: 1px solid ${props => props.theme.colors.gray};
+
+    a {
+        text-decoration: none;
+    color: ${props => props.theme.colors.white};
+    transition: opacity .3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    > svg {
+        font-size: 25px;
+    }
+    }
 `;
 
 export const Title = styled.h3 `
@@ -31,19 +48,3 @@ export const MenuContainer = styled.nav `
     gap: 30px
 `;
 
-export const MenuItemLink = styled.a `
-    text-decoration: none;
-    color: ${props => props.theme.colors.white};
-    transition: opacity .3;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    &:hover {
-        opacity: 0.7;
-    }
-
-    > svg {
-        font-size: 25px;
-    }
-`;

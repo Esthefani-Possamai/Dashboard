@@ -28,6 +28,11 @@ export const Container = styled.li `
         gap: 5px;
     }
 
+    > div span {
+        font-weight: 200;
+        font-size: 20px;
+    }
+
 `;
 
 

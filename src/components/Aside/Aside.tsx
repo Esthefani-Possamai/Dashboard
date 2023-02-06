@@ -7,6 +7,7 @@ import {
     MdArrowUpward,
     MdExitToApp
 } from 'react-icons/md'
+import { Link } from "react-router-dom";
 
 export const Aside = () => {
     return (
@@ -17,22 +18,22 @@ export const Aside = () => {
             </C.Header>
 
             <C.MenuContainer>
-                <C.MenuItemLink href="#">
+                <Link to="/dashboard">
                     <MdDashboard />
                     Dashboard
-                </C.MenuItemLink>
-                <C.MenuItemLink href="#">
+                </Link>
+                <Link to="/list/entry-balance">
                     <MdArrowUpward />
                     Entradas
-                </C.MenuItemLink>
-                <C.MenuItemLink href="#">
+                </Link>
+                <Link to="/list/exit-balance">
                     <MdArrowDownward />
                     Saídas
-                </C.MenuItemLink>
-                <C.MenuItemLink href="#">
+                </Link>
+                <Link to="/">
                     <MdExitToApp />
                     Sair
-                </C.MenuItemLink>
+                </Link>
             </C.MenuContainer>
         </C.Container>
 
