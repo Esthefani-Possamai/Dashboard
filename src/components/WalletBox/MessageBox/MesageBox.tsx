@@ -1,6 +1,6 @@
 import React from "react";
 import * as C from './styles'
-import happyImg from '../../../icons/happy.svg'
+
 
 interface IMessageProps {
     title: string;
