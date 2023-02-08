@@ -1,10 +1,18 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import * as C from './styles'
 import emojs from '../../icons/Icons'
 import { Toggle } from "../Toggle/Toggle";
+import { useTheme } from '../../Hooks/theme'
 
 
 export const MainHeader = () => {
+
+    const { toggleTheme, theme } = useTheme();
+    const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false)
+    const handleTheme = () => {
+        setDarkTheme(!darkTheme);
+        toggleTheme();
+    }
 
     // Sortear um emoj cada vez que a tela é renderizada
     const emoj = useMemo (() => {
@@ -14,9 +22,15 @@ export const MainHeader = () => {
 
     return (
         <C.Container>
-            <Toggle />
-
+            <Toggle
+            labelLeft="Light"
+            labelRight="Dark"
+            checked={darkTheme}
+            onChange={handleTheme}
             
+            />
+
+
             <C.Profile>
                 <C.Welcome>
                     Olá, {emoj} 

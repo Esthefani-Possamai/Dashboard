@@ -2,23 +2,30 @@
 import { useState } from 'react';
 import * as C from './styles'
 
-export const Toggle = () => {
+interface IToggleProps {
+    labelLeft: string;
+    labelRight: string;
+    checked: boolean;
+    onChange(): void;
+}
+
+export const Toggle: React.FC<IToggleProps> = ({labelLeft, labelRight, checked, onChange}) => {
 
     const [ativo, setAtivo] = useState(true);
     
     return (
         <C.Container>
             <C.ToggleLabel>
-                Light
+                {labelLeft}
             </C.ToggleLabel>
             <C.ToggleSelector
-            checked={ativo}
+            checked={checked}
             uncheckedIcon={false}
             checkedIcon={false}
-            onChange={() => setAtivo (!ativo)}
+            onChange={onChange}
             ></C.ToggleSelector>
             <C.ToggleLabel>
-                Dark
+                {labelRight}
             </C.ToggleLabel>
             
         </C.Container>
