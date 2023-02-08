@@ -15,6 +15,8 @@ export const MainHeader = () => {
     return (
         <C.Container>
             <Toggle />
+
+            
             <C.Profile>
                 <C.Welcome>
                     Olá, {emoj} 

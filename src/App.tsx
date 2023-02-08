@@ -1,13 +1,14 @@
 import React from 'react';
 import GlobalStyles from './style/GlobalStyle';
 import {ThemeProvider} from 'styled-components'
-import dark from './style/themes/dark'
-import light from './style/themes/light'
 import { AppRoutes } from './routes/app.routes';
+import { useTheme } from './Hooks/theme';
 
 function App() {
+
+  const { theme } = useTheme();
   return (
-    <ThemeProvider theme={dark}>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <AppRoutes/>
     </ThemeProvider>
@@ -15,3 +16,5 @@ function App() {
 }
 
 export default App;
+
+
