@@ -16,12 +16,3 @@ export const AppRoutes: React.FC = () => {
         </BrowserRouter>
     )
 }
-
-{/* <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Page1 />} />
-            <Route path='/page2' element={<Page2 />} />
-            <Route path='/page3' element={<Page3 />} />
-            <Route path='/page4' element={<Page4 />} />
-          </Routes>
-        </BrowserRouter> */}

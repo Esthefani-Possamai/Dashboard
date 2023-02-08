@@ -1,8 +1,8 @@
 import React from 'react';
 import GlobalStyles from './style/GlobalStyle';
 import {ThemeProvider} from 'styled-components'
-import { AppRoutes } from './routes/app.routes';
 import { useTheme } from './Hooks/theme';
+import { AuthRoutes } from './routes/auth.routes';
 
 function App() {
 
@@ -10,7 +10,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AppRoutes/>
+      {/* <AppRoutes/> */}
+      <AuthRoutes/>
     </ThemeProvider>
   );
 }
