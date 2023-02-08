@@ -1,11 +1,11 @@
-import React, { createContext, useState, useContext, ReactNode, ReactChild, ReactChildren } from "react";
+import React, { createContext, useState, useContext, ReactNode} from "react";
 import dark from "../style/themes/dark";
 import light from "../style/themes/light";
 
 interface IThemeContext {
   toggleTheme(): void;
   theme: ITheme;
-  children?: React. ReactNode;
+  children?: React.ReactNode;
 }
 
 

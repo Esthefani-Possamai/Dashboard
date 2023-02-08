@@ -2,6 +2,7 @@ import React from "react";
 import * as C from './styles'
 import logoImg from '../../icons/logo.svg'
 import { InputForm } from "../../components/Input/Input";
+import { ButtonForm } from "../../components/Button/Button";
 
 export const SignIn = () => {
     return (
@@ -17,14 +18,18 @@ export const SignIn = () => {
                 </C.FormTitle>
                 <InputForm 
                 type="email"
-                required/>
+                required
+                placeholder="E-mail"
+                />
                 <InputForm 
                 type="password"
                 required
-
+                placeholder="Senha"
                 />
 
-                <button type="submit">Acessar</button>
+               <ButtonForm
+               type="submit"
+               >Acessar</ButtonForm>
            </C.Form>
         </C.Container>
     )
