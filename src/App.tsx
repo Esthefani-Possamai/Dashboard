@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AppRoutes/>
+      {/* <AppRoutes/> */}
       <AuthRoutes/>
     </ThemeProvider>
   );

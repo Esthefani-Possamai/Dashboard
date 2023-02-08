@@ -2,8 +2,8 @@ import React, { createContext, useState, useContext } from "react";
 
 interface IAuthContext {
     children?: React.ReactNode;
-    logged: boolean;
-    signIn(email:string, password: string): void;
+    logged?: boolean;
+    signIn(email?:string, password?: string): void;
     signOut(): void;
 }
 
@@ -20,6 +20,8 @@ const AuthProvider: React.FC<IAuthContext> = ({ children }) => {
         if(email === 'esthefani@hotmail.com' && password === '123'){
             localStorage.setItem('@minha-carteira:logged', 'true');
             setLogged(true)
+            alert('Acessado com sucesso')
+            
         }else{
             alert('E-mail ou senha inválidos')
         }
