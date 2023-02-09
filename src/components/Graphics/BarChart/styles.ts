@@ -12,6 +12,18 @@ export const Container = styled.div `
     background-color: ${props => props.theme.colors.tertiary};
     color: ${props => props.theme.colors.white};
     display: flex;
+
+    @media (max-width: 1280px){
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 400px;
+    }
+
+    @media (max-width: 360px) {
+        min-height: 500px;
+    } 
+
 `;
 
 export const SideLeft = styled.div `
@@ -22,7 +34,10 @@ export const SideLeft = styled.div `
 
     > h2 {
         margin-bottom: 10px;
+        padding-bottom: 0px;
     }
+
+   
 `;
 
 export const SideRight = styled.div `
@@ -33,6 +48,13 @@ export const SideRight = styled.div `
     display: flex;
     align-items: flex-end;
 
+    @media (max-width: 1280px){
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-top: 0px;
+    }
 
 `;
 
@@ -54,6 +76,19 @@ export const LegendContainer = styled.ul`
         background-color: ${props => props.theme.colors.tertiary};
     }
 
+    @media (max-width: 1345px) {
+        display: flex;
+        padding: 0px;
+        width: 100%;
+        height: auto;
+        gap: 15px;
+        justify-content: center;
+    } 
+
+    @media (max-width: 360px) {
+        flex-direction: column;
+    } 
+
 `;
 
 export const Legend = styled.li<ILegend>`
@@ -71,8 +106,20 @@ export const Legend = styled.li<ILegend>`
         align-items: center;
         justify-content: center;
         font-size: 14px;
-        margin-bottom: 10px;
+        margin: 10px 0px;
         padding: 5px;
+    }
+
+    @media (max-width: 1345px){
+        font-size: 14px;
+        margin: 3px 0;
+
+        > div {
+            height: 45px;
+            width: 45px;
+            font-size: 12px;
+            line-height: 30px;
+        }
     }
 
 `;

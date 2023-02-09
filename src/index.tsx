@@ -15,12 +15,11 @@ root.render(
       <ThemeProvider toggleTheme={function () : void {
         throw new Error ('');
       }} theme={light}>
-        <AuthProvider signIn={function (email?: string | undefined, password?: string | undefined): void {
-        throw new Error('Function not implemented.');
-      } } signOut={function (): void {
-        throw new Error('Function not implemented.');
-      } }/>
-        <App />
+
+        {/* englobar o App com o AuthProvider é fundamental para que o contexto reconheça o filho */}
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </ThemeProvider>
   </React.StrictMode>
 );

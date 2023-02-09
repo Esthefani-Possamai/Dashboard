@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
+interface IContainerProps{
+    menuIsOpen:boolean;
+}
 
-export const Container = styled.div `
+export const Container = styled.div <IContainerProps>`
     grid-area: AS;
     background-color: ${props => props.theme.colors.secondary};
     color: ${props => props.theme.colors.white};
@@ -9,7 +12,7 @@ export const Container = styled.div `
     border-right: 1px solid ${props => props.theme.colors.gray};
 
     a {
-        text-decoration: none;
+    text-decoration: none;
     color: ${props => props.theme.colors.white};
     transition: opacity .3;
     display: flex;
@@ -23,6 +26,22 @@ export const Container = styled.div `
     > svg {
         font-size: 25px;
     }
+    }
+
+    position: relative;
+
+    @media(max-width: 770px) {
+        padding-left: 7px;
+        position: fixed;
+        z-index: 2;
+        height: ${props => props.menuIsOpen ? '100vh' : '70px'};
+        overflow: hidden;
+        width: 60%;
+        
+        ${props => !props.menuIsOpen && css `
+            border: none;
+            border-bottom: 1px solid ${props => props.theme.colors.gray}
+        `}
     }
 `;
 
@@ -48,3 +67,22 @@ export const MenuContainer = styled.nav `
     gap: 30px
 `;
 
+
+export const MenuItemButton = styled.button `
+
+    color: ${props => props.theme.colors.white};
+    transition: opacity .3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background: none;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    > svg {
+        font-size: 25px;
+    }
+`;

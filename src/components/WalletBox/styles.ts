@@ -20,8 +20,6 @@ export const Container = styled.div<IProps> `
     :hover {
         transform: scale(1.05);
     }
-    
-
 
     >img {
         height: 110%;
@@ -40,5 +38,41 @@ export const Container = styled.div<IProps> `
         font-size: 12px;
         position: absolute;
         bottom: 10px;
+    }
+
+    @media(max-width: 770px) {
+        > span {
+            font-size: 14px;
+        }
+
+        > h1 {
+            word-wrap: break-word;
+            font-size: 16px;
+
+            > strong {
+                display: inline-block;
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 420px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+
+            > h1 {
+                font-size: 22px;
+                display: flex;
+                gap: 10px;
+
+            > strong {
+                width: auto;
+                font-size: 22px;
+            }
+        }
+
+        }
     }
 `;

@@ -20,4 +20,31 @@ export const Container = styled.div `
     > header p {
         font-size: 18px;
     }
+
+    @media(max-width: 770px) {
+        width: 100%;
+        height: auto;
+        > header h1 {
+            font-size: 22px;
+
+            img {
+                height: 20px;
+                width: min-content;
+            }
+        }
+
+        >header padding, > footer span {
+            font-size: 14px;
+        }
+    }
+
+    @media(max-width: 420px) {
+        width: 100%;
+        height: auto;
+
+        > header p {
+
+        }
+
+    }
 `;

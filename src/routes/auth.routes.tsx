@@ -6,7 +6,7 @@ export const AuthRoutes: React.FC = () => (
 
     <BrowserRouter>
         <Routes>
-            <Route path="/SignIn"element={<SignIn/>} />
+            <Route path="/" element={<SignIn/>} />
         </Routes>
     </BrowserRouter>
 )

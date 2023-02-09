@@ -7,7 +7,6 @@ import {
     Cell,
     Tooltip
 } from 'recharts'
-import { MdDragIndicator } from "react-icons/md";
 import { formateCurrency } from "../HistoryBox/Formatter";
 
 interface IPropsBar {

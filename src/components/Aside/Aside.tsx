@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import * as C from './styles'
 import logoImg from '../../icons/logo.svg'
+import { useAuth } from '../../Hooks/auth'
 import {
     MdDashboard,
     MdArrowDownward,
@@ -10,15 +11,18 @@ import {
 import { Link } from "react-router-dom";
 
 export const Aside = () => {
+
+    const { signOut } = useAuth();
+
     return (
-        <C.Container>
+        <C.Container menuIsOpen={true}>
             <C.Header>
                 <C.LogImg src={logoImg} alt="Logo Minha Carteira" />
                 <C.Title>Minha Carteira</C.Title>
             </C.Header>
 
             <C.MenuContainer>
-                <Link to="/dashboard">
+                <Link to="/">
                     <MdDashboard />
                     Dashboard
                 </Link>
@@ -30,13 +34,12 @@ export const Aside = () => {
                     <MdArrowDownward />
                     Saídas
                 </Link>
-                <Link to="/">
+
+                <C.MenuItemButton onClick={signOut}>
                     <MdExitToApp />
                     Sair
-                </Link>
+                </C.MenuItemButton>
             </C.MenuContainer>
         </C.Container>
-
-        
     )
 }

@@ -29,7 +29,10 @@ export const Header = styled.header `
 
 > h2 {
         margin-bottom: 20px;
-        padding-left: 16px;
+    }
+
+    @media (max-width: 1280px){
+        flex-direction: column;
     }
 `;
 
@@ -39,6 +42,10 @@ export const LegendContainer = styled.ul `
     align-items: center;
     gap: 20px;
     padding-right: 18px;
+
+    @media (max-width: 1280px){
+        padding: 0px;
+    }
 `;
 
 export const Legend = styled.li<ILegend>`
@@ -57,5 +64,12 @@ export const Legend = styled.li<ILegend>`
         justify-content: center;
         font-size: 14px;
         padding: 5px;
+    }
+
+    @media (max-width: 1280px){
+        > div {
+            width: 20px;
+            height: 20px;
+        }
     }
 `;

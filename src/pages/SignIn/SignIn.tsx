@@ -4,24 +4,15 @@ import logoImg from '../../icons/logo.svg'
 import { InputForm } from "../../components/Input/Input";
 import { ButtonForm } from "../../components/Button/Button";
 import { useAuth } from "../../Hooks/auth";
+import { Link } from 'react-router-dom'
 
 
 export const SignIn: React.FC = () => {
 
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-
     const { signIn } = useAuth();
 
-    // const signIn = (email:string, password:string) => {
-
-    //     if(email === 'esthefani@hotmail.com' && password === '123'){
-    //         localStorage.setItem('@minha-carteira:logged', 'true');
-    //         setLogged(true)
-    //     }else{
-    //         alert('E-mail ou senha inválidos')
-    //     }
-    // }
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
 
     return (
         <C.Container>
@@ -30,7 +21,11 @@ export const SignIn: React.FC = () => {
                 <h2>Minha Carteira</h2>
            </C.Logo>
 
-           <C.Form onSubmit={() => signIn(email, password)}>
+           <C.Form onSubmit={(e) => {
+            e.preventDefault()
+            signIn(email, password)
+            }
+            }>
                 <C.FormTitle>
                     Entrar
                 </C.FormTitle>
@@ -40,6 +35,7 @@ export const SignIn: React.FC = () => {
                 required
                 placeholder="E-mail"
                 onChange={(e) => setEmail(e.target.value)}
+                
                 />
 
                 <InputForm 
@@ -47,13 +43,17 @@ export const SignIn: React.FC = () => {
                 required
                 placeholder="Senha"
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete="off"
                 />
 
-               <ButtonForm
+
+                {/* comentar o Link se for para teste do hook de autenticação */}
+                {/* <Link to={"/dash"}> */}
+                <ButtonForm
                type="submit">
                 Acessar
                 </ButtonForm>
-
+                {/* </Link> */}
            </C.Form>
         </C.Container>
     )

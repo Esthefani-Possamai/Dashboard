@@ -9,7 +9,7 @@ export const AppRoutes: React.FC = () => {
         <BrowserRouter>
             <Layout>
                     <Routes>
-                        <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/" element={<Dashboard />} />
                         <Route path="/list/:type" element={<Listas />} />
                     </Routes>
             </Layout>
