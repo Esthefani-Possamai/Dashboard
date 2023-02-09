@@ -18,6 +18,7 @@ export const Container = styled.div <IContainerProps>`
     display: flex;
     align-items: center;
     gap: 5px;
+    
 
     &:hover {
         opacity: 0.7;
@@ -26,27 +27,34 @@ export const Container = styled.div <IContainerProps>`
     > svg {
         font-size: 25px;
     }
-    }
+}
 
     position: relative;
 
-    @media(max-width: 770px) {
+    @media(max-width: 750px) {
         padding-left: 7px;
         position: fixed;
         z-index: 2;
-        height: ${props => props.menuIsOpen ? '100vh' : '70px'};
+        height: ${props => props.menuIsOpen ? '100vh' : '60px'};
         overflow: hidden;
         width: 60%;
         
         ${props => !props.menuIsOpen && css `
             border: none;
             border-bottom: 1px solid ${props => props.theme.colors.gray}
+            width: 40px;
         `}
     }
 `;
 
+export const ToggleMenu = styled.button ``;
+
 export const Title = styled.h3 `
     margin-left: 10px;
+
+    @media(max-width: 750px){
+        display: none;
+    }
 `;
 
 export const Header = styled.header `
@@ -58,13 +66,19 @@ export const Header = styled.header `
 export const LogImg = styled.img `
 height: 40px;
 
+@media(max-width: 750px){
+    height: 30px;
+}
+
 `;
 
 export const MenuContainer = styled.nav `
     display: flex;
     margin-top: 40px;
     flex-direction: column;
-    gap: 30px
+    gap: 30px;
+
+    
 `;
 
 

@@ -6,17 +6,24 @@ import {
     MdDashboard,
     MdArrowDownward,
     MdArrowUpward,
-    MdExitToApp
+    MdExitToApp,
+    MdClose,
+    MdMenu,
 } from 'react-icons/md'
 import { Link } from "react-router-dom";
 
 export const Aside = () => {
 
     const { signOut } = useAuth();
+    const [Open, setOpen] = useState(false);
 
     return (
         <C.Container menuIsOpen={true}>
             <C.Header>
+                <C.ToggleMenu onClick={() => {setOpen(!Open)}}>
+                    { Open ? <MdClose/> : <MdMenu/>}
+
+                </C.ToggleMenu>
                 <C.LogImg src={logoImg} alt="Logo Minha Carteira" />
                 <C.Title>Minha Carteira</C.Title>
             </C.Header>
