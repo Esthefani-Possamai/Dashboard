@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from "react";
 import * as C from './styles'
 import emojs from '../../icons/Icons'
-import { Toggle } from "../Toggle/Toggle";
+
 import { useTheme } from '../../Hooks/theme'
+import { Toggle } from "../Toggle/Toggle";
+
 
 
 export const MainHeader = () => {
