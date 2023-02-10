@@ -42,12 +42,28 @@ export const Container = styled.div <IContainerProps>`
         ${props => !props.menuIsOpen && css `
             border: none;
             border-bottom: 1px solid ${props => props.theme.colors.gray}
-            width: 40px;
+            width: 20px;
         `}
     }
 `;
 
-export const ToggleMenu = styled.button ``;
+export const ToggleMenu = styled.button `
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 22px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: ${props => props.theme.colors.warning};
+    display: none;
+
+    @media(max-width: 750px) {
+        display: flex;
+        justify-content: MdCenterFocusStrong;
+        align-items: center;
+    }
+`;
 
 export const Title = styled.h3 `
     margin-left: 10px;
@@ -57,10 +73,14 @@ export const Title = styled.h3 `
     }
 `;
 
-export const Header = styled.header `
+export const Header = styled.header <IContainerProps>`
     display: flex;
     align-items: center;
     height: 70px;
+    
+    @media(max-width: 750px){
+        justify-content: space-between;
+    }
 `;
 
 export const LogImg = styled.img `
@@ -68,6 +88,7 @@ height: 40px;
 
 @media(max-width: 750px){
     height: 30px;
+    display: none;
 }
 
 `;
@@ -99,4 +120,15 @@ export const MenuItemButton = styled.button `
     > svg {
         font-size: 25px;
     }
+`;
+
+
+export const ThemeToggle = styled.div<IContainerProps>`
+display: none;
+@media(max-width: 750px){
+    display: ${props => props.menuIsOpen ? 'flex' : 'none'};
+    justify-content: space-around;
+    padding-right: 10px;
+    font-size: 14px;
+}
 `;

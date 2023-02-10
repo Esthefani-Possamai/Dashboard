@@ -1,26 +1,18 @@
 import React from 'react';
 import GlobalStyles from './style/GlobalStyle';
-import {ThemeProvider} from 'styled-components'
-import { useTheme } from './Hooks/theme';
-import { AuthRoutes } from './routes/auth.routes';
 import { AppRoutes } from './routes/app.routes';
-import { useAuth } from './Hooks/auth';
+import { ThemeProvider } from 'styled-components';
+import { useTheme } from './Hooks/theme';
 
 function App() {
 
-  const { theme } = useTheme();
-  const { logged } = useAuth();
-
-
+  const {theme} = useTheme();
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      { logged ? <AppRoutes/> : <AuthRoutes /> }
+      <AppRoutes/>
     </ThemeProvider>
   );
 }
 
 export default App;
-
-
-

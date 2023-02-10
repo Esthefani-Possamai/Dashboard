@@ -8,6 +8,7 @@ import gains from "../../repositories/gains";
 import expenses from "../../repositories/expenses";
 import listOfMonths from './Months'
 import { v4 as uuidv4} from 'uuid';
+import { useId } from "react-id-generator";
 
 interface IData {
     id: string;
@@ -19,6 +20,7 @@ interface IData {
 }
 
 export const Listas = () => {
+    const htmlId = useId() ;
 
     const [data, setData] = useState<IData[]>([])
     const [monthSelected, setMonth] = useState<string>(String(7));
@@ -103,7 +105,7 @@ export const Listas = () => {
 
         const formattedData = filteredData.map (item => {
             return {
-                id: uuidv4(),
+                id: String(htmlId),
                 description: item.description,
                 amount: formatCurrency (Number(item.amount)),
                 frequency: item.frequency,

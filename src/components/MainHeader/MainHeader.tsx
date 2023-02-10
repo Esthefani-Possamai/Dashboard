@@ -1,18 +1,17 @@
 import React, { useMemo, useState } from "react";
 import * as C from './styles'
 import emojs from '../../icons/Icons'
-
-import { useTheme } from '../../Hooks/theme'
 import { Toggle } from "../Toggle/Toggle";
+import { useTheme } from "../../Hooks/theme";
 
 
+export const MainHeader: React.FC = () => {
 
-export const MainHeader = () => {
+    const {toggleTheme, theme} = useTheme();
+    const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false);
 
-    const { toggleTheme, theme } = useTheme();
-    const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false)
-    const handleTheme = () => {
-        setDarkTheme(!darkTheme);
+    const handleChangeTheme = () => {
+        setDarkTheme(!darkTheme)
         toggleTheme();
     }
 
@@ -24,15 +23,11 @@ export const MainHeader = () => {
 
     return (
         <C.Container>
-            <Toggle
-            labelLeft="Light"
-            labelRight="Dark"
-            checked={darkTheme}
-            onChange={handleTheme}
-            
-            />
-
-
+            <Toggle 
+            labelLeft={"Light"} 
+            labelRight={"Dark"} 
+            checked={darkTheme} 
+            onChange={handleChangeTheme} />
             <C.Profile>
                 <C.Welcome>
                     Olá, {emoj} 

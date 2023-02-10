@@ -1,5 +1,18 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
+const animate = keyframes `
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    50% {
+        opacity: .3;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity:1;
+    }
+`;
 interface ITag {
     color: string;
 }
@@ -16,6 +29,7 @@ export const Container = styled.li `
     cursor: pointer;
     transition:  all .4;
     position: relative;
+    animation: ${animate} .5s ease;
 
     &:hover {
         transform: scale(1.01);

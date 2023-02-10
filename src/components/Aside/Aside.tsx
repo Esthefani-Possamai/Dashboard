@@ -11,21 +11,37 @@ import {
     MdMenu,
 } from 'react-icons/md'
 import { Link } from "react-router-dom";
+import { useTheme } from "../../Hooks/theme";
+import { Toggle } from "../Toggle/Toggle";
 
 export const Aside = () => {
 
     const { signOut } = useAuth();
+    const {toggleTheme, theme} = useTheme();
     const [Open, setOpen] = useState(false);
+    const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false);
+    const handleChangeTheme = () => {
+        setDarkTheme(!darkTheme)
+        toggleTheme();
+    }
 
     return (
-        <C.Container menuIsOpen={true}>
-            <C.Header>
+        <C.Container menuIsOpen={Open}>
+            <C.Header menuIsOpen={Open}>
                 <C.ToggleMenu onClick={() => {setOpen(!Open)}}>
                     { Open ? <MdClose/> : <MdMenu/>}
 
                 </C.ToggleMenu>
                 <C.LogImg src={logoImg} alt="Logo Minha Carteira" />
                 <C.Title>Minha Carteira</C.Title>
+
+                <C.ThemeToggle menuIsOpen={Open}>
+                <Toggle 
+                labelLeft={"Light"} 
+                labelRight={"Dark"} 
+                checked={darkTheme} 
+                onChange={handleChangeTheme} />
+                </C.ThemeToggle>
             </C.Header>
 
             <C.MenuContainer>
