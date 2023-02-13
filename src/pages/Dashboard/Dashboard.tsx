@@ -294,7 +294,7 @@ export const Dashboard: React.FC = () => {
           amount={totalBalance}
           footerlabel={"atualizado com base nas entradas e saídas"}
           icon={"dollarImg"}
-          color={"#5d62ae"}
+          color={"#34675C"}
         />
 
         <WalletBox
@@ -302,7 +302,7 @@ export const Dashboard: React.FC = () => {
           amount={totalGains}
           footerlabel={"atualizado com base nas entradas e saídas"}
           icon={"arrowUpImg"}
-          color={"#5d62ae"}
+          color={"#34675C"}
         />
 
         <WalletBox
@@ -310,7 +310,7 @@ export const Dashboard: React.FC = () => {
           amount={totalExpenses}
           footerlabel={"atualizado com base nas entradas e saídas"}
           icon={"arrowDownImg"}
-          color={"#5d62ae"}
+          color={"#34675C"}
         />
 
         <MessageBox

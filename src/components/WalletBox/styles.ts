@@ -9,7 +9,7 @@ export const Container = styled.div<IProps> `
     width: 32%;
     height: 150px;
     margin: 10px 0px;
-    color: ${props => props.theme.colors.white};
+    color: #fff;
     border-radius: 7px;
     padding: 10px 20px;
     position: relative;

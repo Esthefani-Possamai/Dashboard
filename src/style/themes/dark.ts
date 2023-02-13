@@ -5,13 +5,13 @@ export default {
     colors: {
         primary: '#262626',
         secondary: '#363636',
-        tertiary: '#005452',
+        tertiary: '#4C5958',
 
         white: '#fff',
         black: '#000',
-        gray: '#bfbfbf',
+        gray: '#a7a6a6',
 
-        sucess: '',
+        sucess: '#6C733D',
         info: '#B99B6B',
         warning: '#AA5656',
     },
