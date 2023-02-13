@@ -23,7 +23,7 @@ export const Listas = () => {
     const htmlId = useId() ;
 
     const [data, setData] = useState<IData[]>([])
-    const [monthSelected, setMonth] = useState<string>(String(7));
+    const [monthSelected, setMonth] = useState<string>(String(1));
     const [yearSelected, setYear] = useState<string>(String(2020))
     const [selectedFrequency, setSelectedFrequency] = useState(['recorrente', 'eventual']);
 
